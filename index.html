@@ -1,192 +1,121 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>La Fabrique de Cannelle</title>
 
     <style>
-        /* --- Couleurs principales (camaïeu rose/beige) --- */
-        :root {
-            --rose: #c97f7f;
-            --rose-clair: #e8c5c5;
-            --beige: #f7f1ec;
-            --texte: #5a4a4a;
-        }
-
         body {
             margin: 0;
-            font-family: "Georgia", serif;
-            background: var(--beige);
-            color: var(--texte);
+            font-family: Arial, sans-serif;
+            background-color: #f7ece8;
+            color: #5a3e36;
         }
 
-        /* --- Menu latéral --- */
-        .sidebar {
-            height: 100%;
-            width: 0;
+        header {
+            background: linear-gradient(to right, #d8b4a0, #e4c7b7, #f3ddd3);
+            padding: 40px;
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            letter-spacing: 2px;
+            color: #5a3e36;
+        }
+
+        .banner {
+            height: 300px;
+            background-image: url('https://via.placeholder.com/1200x300?text=Votre+image+ici');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: white;
+            font-weight: bold;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5);
+        }
+
+        /* MENU LATERAL */
+        .menu {
             position: fixed;
-            z-index: 10;
-            top: 0;
             left: 0;
-            background-color: var(--rose-clair);
-            overflow-x: hidden;
-            transition: 0.4s;
-            padding-top: 80px;
+            top: 0;
+            width: 220px;
+            height: 100%;
+            background: #e9d5c8;
+            padding-top: 40px;
+            box-shadow: 3px 0 10px rgba(0,0,0,0.1);
         }
 
-        .sidebar a {
-            padding: 15px 30px;
-            text-decoration: none;
-            font-size: 22px;
-            color: var(--texte);
+        .menu a {
             display: block;
+            padding: 15px;
+            margin: 5px 10px;
+            text-decoration: none;
+            color: #5a3e36;
+            font-size: 18px;
+            border-radius: 6px;
         }
 
-        .sidebar a:hover {
-            background: var(--rose);
+        .menu a:hover {
+            background: #d8b4a0;
             color: white;
         }
 
-        .openbtn {
-            font-size: 26px;
-            cursor: pointer;
-            background-color: transparent;
-            border: none;
-            padding: 20px;
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: 11;
-            color: var(--rose);
-        }
-
-        .closebtn {
-            position: absolute;
-            top: 20px;
-            right: 25px;
-            font-size: 30px;
-            color: var(--texte);
-        }
-
-        /* --- Bannière principale --- */
-        .hero {
-            height: 75vh;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+        /* CONTENU PRINCIPAL */
+        .content {
+            margin-left: 240px;
             padding: 20px;
         }
 
-        .hero h1 {
-            font-size: 60px;
-            font-weight: bold;
-            color: var(--rose);
-            margin: 0;
+        .socials {
+            margin-top: 40px;
+            padding: 10px;
         }
 
-        .hero p {
-            font-size: 28px;
-            margin-top: 15px;
-        }
-
-        /* --- Section nouveautés --- */
-        .section-title {
-            text-align: center;
-            font-size: 32px;
-            margin-top: 50px;
-            color: var(--rose);
-        }
-
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            padding: 30px;
-        }
-
-        .card {
-            background: white;
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            text-align: center;
-        }
-
-        .card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-
-        .card p {
-            margin-top: 10px;
+        .socials a {
+            display: block;
             font-size: 18px;
+            margin: 5px 0;
+            color: #5a3e36;
+            text-decoration: none;
         }
 
-        footer {
-            margin-top: 50px;
-            padding: 20px;
-            text-align: center;
-            font-size: 14px;
-            color: var(--texte);
+        .socials a:hover {
+            color: #d89b84;
         }
     </style>
 </head>
 
 <body>
-    <!-- Menu bouton -->
-    <button class="openbtn" onclick="openNav()">☰</button>
 
-    <!-- Menu latéral -->
-    <div id="mySidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <div class="menu">
         <a href="#">Shop</a>
         <a href="#">À propos</a>
         <a href="#">Contact</a>
-        <a href="https://instagram.com" target="_blank">Instagram</a>
-        <a href="https://tiktok.com" target="_blank">TikTok</a>
-    </div>
 
-    <!-- Bannière / Hero -->
-    <div class="hero" style="background-image: url('banniere.jpg');">
-        <h1>La Fabrique de Cannelle</h1>
-        <p>Première collection</p>
-    </div>
-
-    <!-- Nouveautés -->
-    <h2 class="section-title">Nos nouveautés</h2>
-
-    <div class="cards">
-        <div class="card">
-            <img src="image1.jpg" alt="Produit 1">
-            <p>Produit 1</p>
-        </div>
-        <div class="card">
-            <img src="image2.jpg" alt="Produit 2">
-            <p>Produit 2</p>
-        </div>
-        <div class="card">
-            <img src="image3.jpg" alt="Produit 3">
-            <p>Produit 3</p>
+        <div class="socials">
+            <a href="https://instagram.com" target="_blank">Instagram</a>
+            <a href="https://tiktok.com" target="_blank">TikTok</a>
         </div>
     </div>
 
-    <footer>
-        © 2025 – La Fabrique de Cannelle. Tous droits réservés.
-    </footer>
+    <header>
+        La Fabrique de Cannelle
+    </header>
 
-    <script>
-        function openNav() {
-            document.getElementById("mySidebar").style.width = "260px";
-        }
-        function closeNav() {
-            document.getElementById("mySidebar").style.width = "0";
-        }
-    </script>
+    <div class="banner">
+        Première collection — Ajoutez votre photo ici
+    </div>
+
+    <div class="content">
+        <h2>Bienvenue dans mon univers ✨</h2>
+        <p>Voici la première version de votre site. Vous pouvez ajouter vos produits, vos photos, votre histoire, etc.</p>
+    </div>
+
 </body>
 </html>
+"Mise en ligne du site"
