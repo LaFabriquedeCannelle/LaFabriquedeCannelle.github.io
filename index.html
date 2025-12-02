@@ -1,11 +1,192 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La Fabrique de Cannelle</title>
+
+    <style>
+        /* --- Couleurs principales (camaïeu rose/beige) --- */
+        :root {
+            --rose: #c97f7f;
+            --rose-clair: #e8c5c5;
+            --beige: #f7f1ec;
+            --texte: #5a4a4a;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Georgia", serif;
+            background: var(--beige);
+            color: var(--texte);
+        }
+
+        /* --- Menu latéral --- */
+        .sidebar {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 10;
+            top: 0;
+            left: 0;
+            background-color: var(--rose-clair);
+            overflow-x: hidden;
+            transition: 0.4s;
+            padding-top: 80px;
+        }
+
+        .sidebar a {
+            padding: 15px 30px;
+            text-decoration: none;
+            font-size: 22px;
+            color: var(--texte);
+            display: block;
+        }
+
+        .sidebar a:hover {
+            background: var(--rose);
+            color: white;
+        }
+
+        .openbtn {
+            font-size: 26px;
+            cursor: pointer;
+            background-color: transparent;
+            border: none;
+            padding: 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 11;
+            color: var(--rose);
+        }
+
+        .closebtn {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 30px;
+            color: var(--texte);
+        }
+
+        /* --- Bannière principale --- */
+        .hero {
+            height: 75vh;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 60px;
+            font-weight: bold;
+            color: var(--rose);
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 28px;
+            margin-top: 15px;
+        }
+
+        /* --- Section nouveautés --- */
+        .section-title {
+            text-align: center;
+            font-size: 32px;
+            margin-top: 50px;
+            color: var(--rose);
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 30px;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .card p {
+            margin-top: 10px;
+            font-size: 18px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: var(--texte);
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Bienvenue sur mon site !</h1>
-    <p>Mon premier site GitHub Pages 🎉</p>
+    <!-- Menu bouton -->
+    <button class="openbtn" onclick="openNav()">☰</button>
+
+    <!-- Menu latéral -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="#">Shop</a>
+        <a href="#">À propos</a>
+        <a href="#">Contact</a>
+        <a href="https://instagram.com" target="_blank">Instagram</a>
+        <a href="https://tiktok.com" target="_blank">TikTok</a>
+    </div>
+
+    <!-- Bannière / Hero -->
+    <div class="hero" style="background-image: url('banniere.jpg');">
+        <h1>La Fabrique de Cannelle</h1>
+        <p>Première collection</p>
+    </div>
+
+    <!-- Nouveautés -->
+    <h2 class="section-title">Nos nouveautés</h2>
+
+    <div class="cards">
+        <div class="card">
+            <img src="image1.jpg" alt="Produit 1">
+            <p>Produit 1</p>
+        </div>
+        <div class="card">
+            <img src="image2.jpg" alt="Produit 2">
+            <p>Produit 2</p>
+        </div>
+        <div class="card">
+            <img src="image3.jpg" alt="Produit 3">
+            <p>Produit 3</p>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 – La Fabrique de Cannelle. Tous droits réservés.
+    </footer>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "260px";
+        }
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+        }
+    </script>
 </body>
 </html>
