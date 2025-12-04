@@ -5,55 +5,33 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>La Fabrique de Cannelle</title>
 
-  <!-- Google Font (optionnel) -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
   <style>
     :root{
-      --beige:#ead6cb;
-      --beige-dark:#d6b9aa;
-      --rose:#fdebee;
-      --accent:#9c5a4a;
-      --white:#ffffff;
-      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+      --bg-rose: #fdecee;
+      --beige: #ead6cb;
+      --beige-dark:#d6b19f;
+      --accent:#8b4f45;
+      --text:#4a322d;
+      --card-bg: #fff;
     }
+    /* Reset simple */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%;font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial; color:var(--text); background:var(--bg-rose);}
 
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#5b3a34;background:linear-gradient(180deg,var(--rose),#fff);}
-
-    /* Layout */
-    .app{
-      display:flex;
-      min-height:100vh;
-      gap:24px;
-    }
+    /* App layout */
+    .container{display:flex;min-height:100vh;align-items:stretch;}
 
     /* Sidebar */
     .sidebar{
-      width:260px;
+      width:240px;
       background:linear-gradient(180deg,var(--beige), #f3e0d8);
-      padding:28px 20px;
-      box-shadow: var(--shadow);
-      border-right:1px solid rgba(0,0,0,0.02);
-      transition: width .35s ease, transform .25s ease;
-      display:flex;
-      flex-direction:column;
-      gap:18px;
-      position:relative;
+      padding:28px 18px;
+      border-right:1px solid rgba(0,0,0,0.04);
+      display:flex;flex-direction:column;gap:18px;
+      flex-shrink:0;
     }
-
-    .sidebar.collapsed{ width:80px; }
-    .sidebar .brand{
-      font-weight:700;
-      font-size:20px;
-      color:var(--accent);
-      text-align:left;
-      display:flex;
-      align-items:center;
-      gap:10px;
+    .brand{
+      display:flex;align-items:center;gap:12px;font-weight:700;color:var(--accent);
     }
-
-    .toggle-btn{
-      position:absolute;
-      right:-18px;
-      top
+    .brand .logo{
+      width:44px;height:44px;border-radius:10px;background:linear-gradient(18
