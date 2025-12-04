@@ -1,121 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>La Fabrique de Cannelle</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>La Fabrique de Cannelle</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #f7ece8;
-            color: #5a3e36;
-        }
+  <!-- Google Font (optionnel) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        header {
-            background: linear-gradient(to right, #d8b4a0, #e4c7b7, #f3ddd3);
-            padding: 40px;
-            text-align: center;
-            font-size: 32px;
-            font-weight: bold;
-            letter-spacing: 2px;
-            color: #5a3e36;
-        }
+  <style>
+    :root{
+      --beige:#ead6cb;
+      --beige-dark:#d6b9aa;
+      --rose:#fdebee;
+      --accent:#9c5a4a;
+      --white:#ffffff;
+      --shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
 
-        .banner {
-            height: 300px;
-            background-image: url('https://via.placeholder.com/1200x300?text=Votre+image+ici');
-            background-size: cover;
-            background-position: center;
-            text-align: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 28px;
-            color: white;
-            font-weight: bold;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;color:#5b3a34;background:linear-gradient(180deg,var(--rose),#fff);}
 
-        /* MENU LATERAL */
-        .menu {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 220px;
-            height: 100%;
-            background: #e9d5c8;
-            padding-top: 40px;
-            box-shadow: 3px 0 10px rgba(0,0,0,0.1);
-        }
+    /* Layout */
+    .app{
+      display:flex;
+      min-height:100vh;
+      gap:24px;
+    }
 
-        .menu a {
-            display: block;
-            padding: 15px;
-            margin: 5px 10px;
-            text-decoration: none;
-            color: #5a3e36;
-            font-size: 18px;
-            border-radius: 6px;
-        }
+    /* Sidebar */
+    .sidebar{
+      width:260px;
+      background:linear-gradient(180deg,var(--beige), #f3e0d8);
+      padding:28px 20px;
+      box-shadow: var(--shadow);
+      border-right:1px solid rgba(0,0,0,0.02);
+      transition: width .35s ease, transform .25s ease;
+      display:flex;
+      flex-direction:column;
+      gap:18px;
+      position:relative;
+    }
 
-        .menu a:hover {
-            background: #d8b4a0;
-            color: white;
-        }
+    .sidebar.collapsed{ width:80px; }
+    .sidebar .brand{
+      font-weight:700;
+      font-size:20px;
+      color:var(--accent);
+      text-align:left;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
 
-        /* CONTENU PRINCIPAL */
-        .content {
-            margin-left: 240px;
-            padding: 20px;
-        }
-
-        .socials {
-            margin-top: 40px;
-            padding: 10px;
-        }
-
-        .socials a {
-            display: block;
-            font-size: 18px;
-            margin: 5px 0;
-            color: #5a3e36;
-            text-decoration: none;
-        }
-
-        .socials a:hover {
-            color: #d89b84;
-        }
-    </style>
-</head>
-
-<body>
-
-    <div class="menu">
-        <a href="#">Shop</a>
-        <a href="#">À propos</a>
-        <a href="#">Contact</a>
-
-        <div class="socials">
-            <a href="https://instagram.com" target="_blank">Instagram</a>
-            <a href="https://tiktok.com" target="_blank">TikTok</a>
-        </div>
-    </div>
-
-    <header>
-        La Fabrique de Cannelle
-    </header>
-
-    <div class="banner">
-        Première collection — Ajoutez votre photo ici
-    </div>
-
-    <div class="content">
-        <h2>Bienvenue dans mon univers ✨</h2>
-        <p>Voici la première version de votre site. Vous pouvez ajouter vos produits, vos photos, votre histoire, etc.</p>
-    </div>
-
-</body>
-</html>
-"Mise en ligne du site"
+    .toggle-btn{
+      position:absolute;
+      right:-18px;
+      top
